@@ -12,6 +12,7 @@ function onValueChanged(_, options) {
 }
 
 function onComplete(survey) {
+  console.log(survey.data);
   console.log("Survey complete! Results: " + JSON.stringify(survey.data));
 }
 
