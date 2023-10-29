@@ -51,7 +51,7 @@ export default function SurveyJSReactApplication() {
   return (
     <Router>
       <div>
-        <nav className="navbar navbar-default">
+        {/* <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
               <a className="navbar-brand" href="/">
@@ -84,14 +84,15 @@ export default function SurveyJSReactApplication() {
               </li>
             </ul>
           </div>
-        </nav>
+        </nav> */}
 
         <div className="app-content">
           <Switch>
             <Route exact path="/">
-              <HomePage />
+              {/* <HomePage /> */}
+              <SurveyPage />
             </Route>
-            <Route path="/survey">
+            {/* <Route path="/survey">
               <SurveyPage />
             </Route>
             <Route path="/creator">
@@ -108,7 +109,7 @@ export default function SurveyJSReactApplication() {
             </Route>
             <Route path="/analyticstabulator">
               <AnalyticsTabulatorPage />
-            </Route>
+            </Route> */}
           </Switch>
         </div>
       </div>

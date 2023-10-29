@@ -112,4 +112,4 @@ def api1_year_prediction_post(body):  # noqa: E501
 
         fraction = map_prob_to_bucket(per_thereshold_metrics, prob[0])
         return fraction
-    return 0.09
+    return 400, "Bad Request"
