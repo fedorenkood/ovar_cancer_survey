@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: prediction-api
+  version: 1.0.0
+paths:
+  /api/1_year_prediction:
+    post:
+      tags:
+      - Prediction
+      summary: Get 1-Year Prediction
+      description: |
+        This endpoint predicts a value based on the provided dictionary of type Dict[str, Union[str, int]].
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                anyOf:
+                  - type: string
+                  - type: number
+      responses:
+        '200':
+          description: Successful prediction
+          content:
+            application/json:
+              schema:
+                type: number
+        '400':
+          description: Bad request
+components:
+  schemas:
+    SurveyResults:
+      type: object
+      additionalProperties:
+        anyOf:
+          - type: string
+          - type: number
+  
