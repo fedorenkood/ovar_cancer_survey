@@ -115,19 +115,23 @@ export const json = {
         ]
       },
       {
-        "type": "text",
+        "type": "radiogroup",
         "name": "ovcyst_sum",
-        "title": "The worst summary of any cyst found on the left ovary. The cyst's diamter, solid area, and cyst outline determine the summary of the cyst. Values range from 0 to 9.",
-        "inputType": "number",
-        "validators": [
-          {
-            "type": "numeric",
-            "minValue": 0,
-            "maxValue": 9
-          }
+        "title": "The worst summary of any cyst found on the left ovary. The cyst's diamter, solid area, and cyst outline determine the summary of the cyst. ",
+        "choices": [
+          "Not visualized",
+          "< 3cm, no solid area and smooth outline",
+          "< 3cm, mixed solid area or irregular/papillary outline" ,
+          "< 3cm, solid area",
+          "3 -< 6cm, no solid area and smooth outline",
+          "3 -< 6cm, mixed solid area or irregular/papillary outline",
+          "3 -< 6cm, solid area" ,
+          "6+ cm, no solid area and smooth outline",
+          "6+ cm, mixed solid area or irregular/papillary outline",
+          "6+ cm, solid area",
         ],
         "defaultValue": [
-          0
+          "Not visualized"
         ]
       },
       {

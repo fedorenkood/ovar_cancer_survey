@@ -67,6 +67,21 @@ my_mapping = [
             "Solid area": 3,
         },
     },
+    {
+        "name": ["ovcyst_sum"],
+        "choices": {
+            "Not visualized": 0,
+            "< 3cm, no solid area and smooth outline": 1,
+            "< 3cm, mixed solid area or irregular/papillary outline" : 2,
+            "< 3cm, solid area": 3,
+            "3 -< 6cm, no solid area and smooth outline": 4,
+            "3 -< 6cm, mixed solid area or irregular/papillary outline": 5,
+            "3 -< 6cm, solid area" : 6,
+            "6+ cm, no solid area and smooth outline": 7,
+            "6+ cm, mixed solid area or irregular/papillary outline": 8,
+            "6+ cm, solid area": 9,
+        }
+    }
     ]
 
 
