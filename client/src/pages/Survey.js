@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Model, StylesManager } from "survey-core";
 import { Survey } from "survey-react-ui";
 import "survey-core/defaultV2.css";
+import axios from "axios";
 
 
 import { json } from "../data/survey_json.js";
@@ -16,48 +17,48 @@ export function SurveyPage() {
   const model = new Model(json);
 
   const [apiResponse, setApiResponse] = useState(null);
-
+  const [showSurvey, setShowSurvey] = useState(true);
 
 
   function onComplete(survey) {
     console.log("Survey complete! Results: " + JSON.stringify(survey.data));
-    // Define the API endpoint and request options
-    const apiUrl = 'http://127.0.0.1:8080/api/1_year_prediction'; // Replace with your API URL
-    const requestOptions = {
-      method: 'POST',
+    const config = {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json', // Set the Content-Type header to application/json
       },
-      body: JSON.stringify(survey.data), // Convert the object to JSON
     };
-  
-    // Make the API request
-    fetch(apiUrl, requestOptions)
-      .then((response) => response.json()) // Parse the response as JSON
-      .then((result) => {
-        setApiResponse(result);
-        // You can handle the API response data here
-        console.log(result);
-      })
-      .catch((error) => {
-        console.error('API Error:', error);
-      });
+
+    const endpoint = '/api/1_year_prediction'; 
+    axios.post(endpoint, JSON.stringify(survey.data), config)
+    .then((res) => {
+      if (res.status == 200) {
+        res = res.data * 100;
+
+        setApiResponse(res);
+        setShowSurvey(false)
+      } else {
+        
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
 
   return (
     <div className="container">
-      <h1>SurveyJS Library / Runner</h1>
-      <Survey
+      <h1>Ovarian Cancer Survey</h1>
+      <h5>This survey can be used to predict whether a person will develop cancer within 1 year of screening.</h5>
+      {showSurvey && <Survey
         model={model}
         onComplete={onComplete}
         onValueChanged={onValueChanged}
-      />
+      />}
       <div>
         {apiResponse ? (
           <div>
-            <h1>API Response:</h1>
-            <pre>{JSON.stringify(apiResponse, null, 2)}</pre>
+            <h3>Percentage of people with similar score who developed cancer within 1 year: {apiResponse.toFixed(3)}%</h3>
           </div>
         ) : (
           <p></p>

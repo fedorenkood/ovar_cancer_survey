@@ -1,12 +1,12 @@
 export const json = {
   completedHtml: "<h3>Thank you for your feedback</h3> <h5>Your thoughts and ideas will help us improve our product.</h5>",
-  completedHtmlOnCondition: [{
-    expression: "{nps_score} > 8",
-    html: "<h3>Thank you for your feedback</h3> <h5>We are glad that you love our product. Your ideas and suggestions will help us make it even better.</h5>"
-  }, {
-    expression: "{nps_score} < 7",
-    html: "<h3>Thank you for your feedback</h3> <h5>We are glad that you shared your ideas with us. They will help us make our product better.</h5>"
-  }],
+  // completedHtmlOnCondition: [{
+  //   expression: "{nps_score} > 8",
+  //   html: "<h3>Thank you for your feedback</h3> <h5>We are glad that you love our product. Your ideas and suggestions will help us make it even better.</h5>"
+  // }, {
+  //   expression: "{nps_score} < 7",
+  //   html: "<h3>Thank you for your feedback</h3> <h5>We are glad that you shared your ideas with us. They will help us make our product better.</h5>"
+  // }],
   pages: [{
     name: "page1",
     elements: [

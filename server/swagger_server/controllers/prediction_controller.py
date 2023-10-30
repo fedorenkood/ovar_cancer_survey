@@ -106,7 +106,7 @@ def api1_year_prediction_post(body):  # noqa: E501
         # cols = cv_analytics_util.analytics_utils[0].data_util.get_test_data()[0].columns
 
         # Predicting actual cancer probability using bucketing
-        per_thereshold_metrics = pd.read_csv('./per_threshold_metrics/_for_experiment_participants_screened_single_first_5_RandomForestClassifier_cancer_in_next_1_years__15_trials.csv')
+        per_thereshold_metrics = pd.read_csv('./per_threshold_metrics/_for_experiment_participants_screened_single_first_5_top_35_features_RandomForestClassifier_cancer_in_next_1_years__15_trials.csv')
 
         pred, prob = cv_analytics_util.analytics_utils[0].get_predictions_general(X_predict)
 
