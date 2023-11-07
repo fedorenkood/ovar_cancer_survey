@@ -29,7 +29,12 @@ paths:
           content:
             application/json:
               schema:
-                type: number
+                type: object
+                properties:
+                  fraction:
+                    type: number
+                  probability:
+                    type: number
                 x-content-type: application/json
         "400":
           description: Bad request

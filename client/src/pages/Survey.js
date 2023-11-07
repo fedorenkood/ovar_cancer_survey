@@ -16,7 +16,8 @@ function onValueChanged(_, options) {
 export function SurveyPage() {
   const model = new Model(json);
 
-  const [apiResponse, setApiResponse] = useState(null);
+  const [fraction, setFraction] = useState(null);
+  const [probability, setProbability] = useState(null);
   const [showSurvey, setShowSurvey] = useState(true);
 
 
@@ -32,10 +33,12 @@ export function SurveyPage() {
     axios.post(endpoint, JSON.stringify(survey.data), config)
     .then((res) => {
       if (res.status == 200) {
-        res = res.data * 100;
+        let frac = res.data["fraction"] * 100;
+        let prob = res.data["probability"];
 
-        setApiResponse(res);
-        setShowSurvey(false)
+        setProbability(prob);
+        setFraction(frac);
+        setShowSurvey(false);
       } else {
         
       }
@@ -56,9 +59,10 @@ export function SurveyPage() {
         onValueChanged={onValueChanged}
       />}
       <div>
-        {apiResponse ? (
+        {(!showSurvey) ? (
           <div>
-            <h3>Percentage of people with similar score who developed cancer within 1 year: {apiResponse.toFixed(3)}%</h3>
+            <h3>Score returned by the model: {probability.toFixed(4)}</h3>
+            <h3>Percentage of people with similar score who developed cancer within 1 year: {fraction.toFixed(3)}%</h3>
           </div>
         ) : (
           <p></p>

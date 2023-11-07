@@ -126,5 +126,6 @@ def api1_year_prediction_post(body):  # noqa: E501
         pred, prob = cv_analytics_util.analytics_utils[0].get_predictions_general(X_predict)
 
         fraction = map_prob_to_bucket(per_thereshold_metrics, prob[0])
-        return fraction
+        # TODO: also return a score
+        return {"fraction": fraction, "probability": prob[0]}
     return 400, "Bad Request"

@@ -1,5 +1,5 @@
 export const json = {
-  completedHtml: "<h3>Thank you for your feedback</h3> <h5>Your thoughts and ideas will help us improve our product.</h5>",
+  // completedHtml: "<h3>Thank you for taking a survey</h3>",
   // completedHtmlOnCondition: [{
   //   expression: "{nps_score} > 8",
   //   html: "<h3>Thank you for your feedback</h3> <h5>We are glad that you love our product. Your ideas and suggestions will help us make it even better.</h5>"
@@ -85,7 +85,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovcyst_vol",
-        "title": "The worst volume on any cyst found on either ovary. Values range from 0 to 5644.",
+        "title": "The worst volume on any cyst found on either ovary in cm^3. Values range from 0 to 5644.",
         "inputType": "number",
         "validators": [
           {
@@ -101,7 +101,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovary_vol",
-        "title": "The largest ovary volume of the left and right ovary. Values range from 0 to 977.",
+        "title": "The largest ovary volume of the left and right ovary in cm^3. Values range from 0 to 977.",
         "inputType": "number",
         "validators": [
           {
@@ -137,7 +137,7 @@ export const json = {
       {
         "type": "radiogroup",
         "name": "detl_p",
-        "title": "Sonographically Dectectable Left Side? ",
+        "title": "Sonographically Dectectable Left ovary? ",
         "choices": [
           "True",
           "False"
@@ -149,7 +149,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovcyst_diam",
-        "title": "The worst diameter on any cyst found on either ovary. Values range from 0 to 22.",
+        "title": "The worst diameter on any cyst found on either ovary in cm. Values range from 0 to 22.",
         "inputType": "number",
         "validators": [
           {
@@ -165,7 +165,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovary_volr",
-        "title": "The right ovary volume. Values range from 0 to 977.",
+        "title": "The right ovary volume in cm^3. Values range from 0 to 977.",
         "inputType": "number",
         "validators": [
           {
@@ -181,7 +181,7 @@ export const json = {
       {
         "type": "radiogroup",
         "name": "detr_p",
-        "title": "Sonographically Dectectable Right Side? ",
+        "title": "Sonographically Dectectable Right ovary? ",
         "choices": [
           "True",
           "False"
@@ -193,7 +193,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovcyst_volr",
-        "title": "The worst volume on any cyst found on the right ovary. Values range from 0 to 1176.",
+        "title": "The worst volume on any cyst found on the right ovary in cm^3. Values range from 0 to 1176.",
         "inputType": "number",
         "validators": [
           {
@@ -209,7 +209,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovary_diam",
-        "title": "The largest ovary diameter of the left and right ovary (in cm). Values range from 0 to 14.",
+        "title": "The largest ovary diameter of the left and right ovary in cm. Values range from 0 to 14.",
         "inputType": "number",
         "validators": [
           {
@@ -225,7 +225,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovcyst_diamr",
-        "title": "The worst diameter on any cyst found on the right ovary. Values range from 0 to 14.",
+        "title": "The worst diameter on any cyst found on the right ovary in cm. Values range from 0 to 14.",
         "inputType": "number",
         "validators": [
           {
@@ -367,7 +367,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovary_voll",
-        "title": "The left ovary volume. Values range from 0 to 470.",
+        "title": "The left ovary volume in cm^3. Values range from 0 to 470.",
         "inputType": "number",
         "validators": [
           {
@@ -383,7 +383,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovcyst_diaml",
-        "title": "The worst diameter on any cyst found on the left ovary. Values range from 0 to 22.",
+        "title": "The worst diameter on any cyst found on the left ovary in cm. Values range from 0 to 22.",
         "inputType": "number",
         "validators": [
           {
@@ -399,7 +399,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovcyst_voll",
-        "title": "The left ovary volume. Values range from 0 to 5644.",
+        "title": "The left ovary volume in cm^3. Values range from 0 to 5644.",
         "inputType": "number",
         "validators": [
           {
@@ -447,7 +447,7 @@ export const json = {
       {
         "type": "text",
         "name": "volum",
-        "title": "Volume of Cyst. Values range from 0 to 5000.",
+        "title": "Volume of Cyst in cm^3. Values range from 0 to 5000.",
         "inputType": "number",
         "validators": [
           {
@@ -475,7 +475,7 @@ export const json = {
       {
         "type": "text",
         "name": "ovary_diamr",
-        "title": "The right ovary diameter. Values range from 0 to 14.",
+        "title": "The right ovary diameter in cm. Values range from 0 to 14.",
         "inputType": "number",
         "validators": [
           {
@@ -491,7 +491,7 @@ export const json = {
       {
         "type": "text",
         "name": "rlong_p",
-        "title": "Ovary Size - Longitudinal Diameter Right Side. Values range from 0 to 137.",
+        "title": "Ovary Size - Longitudinal Diameter Right Side in m. Values range from 0 to 137.",
         "inputType": "number",
         "validators": [
           {
@@ -507,7 +507,7 @@ export const json = {
       {
         "type": "radiogroup",
         "name": "viseith",
-        "title": "Sonographically Detectable Either Side? ",
+        "title": "Was either ovary sonographically detectable? ",
         "choices": [
           "True",
           "False"
